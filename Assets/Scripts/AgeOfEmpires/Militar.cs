@@ -8,7 +8,7 @@ public class Militar : Persona
     private int poderAtaque;
     private int rangoAtaque;
     
-    public Militar(string n){
+    public Militar(string n, int poder){
         nacer();
         velocidadMov = 40;
         poderAtaque = 50;

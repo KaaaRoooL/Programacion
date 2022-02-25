@@ -77,9 +77,9 @@ public class Main : MonoBehaviour
         List<Militar> militaresRojos = new List<Militar>();
 
         aldeanoRojo.Add(new Aldeano("AldeanoRojo"));
-        militaresRojos.Add(new Militar("MilitarRojo1"));
-        militaresRojos.Add(new Militar("MilitarRojo2"));
-        militaresRojos.Add(new Militar("MilitarRojo3"));
+        militaresRojos.Add(new Militar("MilitarRojo1", 10));
+        militaresRojos.Add(new Militar("MilitarRojo2", 20));
+        militaresRojos.Add(new Militar("MilitarRojo3", 30));
 
 
         //Equipo Azul
@@ -87,17 +87,16 @@ public class Main : MonoBehaviour
         List<Militar> militaresAzules = new List<Militar>();
 
         aldeanoAzul.Add(new Aldeano("AldeanoAzul"));
-        militaresAzules.Add(new Militar("MilitarAzul1"));
-        militaresAzules.Add(new Militar("MilitarAzul2"));
-        militaresAzules.Add(new Militar("MilitarAzul3"));
+        militaresAzules.Add(new Militar("MilitarAzul1",10));
+        militaresAzules.Add(new Militar("MilitarAzul2", 20));
+        militaresAzules.Add(new Militar("MilitarAzul3", 30));
 
         
         
 
-        militaresRojos[0]
+        
 
         aldeanoRojo[0].serAtacado(militaresAzules[Random.Range(0, 3)].atacar());
-
         aldeanoAzul[0].serAtacado(militaresRojos[Random.Range(0, 3)].atacar());
         
         
