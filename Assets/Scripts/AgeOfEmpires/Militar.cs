@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Militar : Persona
+public abstract class Militar : Persona
 {
     
-    private int poderAtaque;
-    private int rangoAtaque;
+    protected int poderAtaque;
+    protected int rangoAtaque;
     
-    public Militar(string n, int poder){
+    /*public Militar(string n, int attack){
         nacer();
         velocidadMov = 40;
-        poderAtaque = 50;
+        poderAtaque = attack;
         nombre=n;
         vidaTotal=500;
         vidaActual = vidaTotal;
         Debug.Log("Creado militar" + nombre);
-    }
+    }*/
     
     
 

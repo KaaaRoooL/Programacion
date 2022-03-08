@@ -73,7 +73,7 @@ public class Main : MonoBehaviour
 
        
         //Equipo Rojo
-        List<Aldeano> aldeanoRojo = new List<Aldeano>();
+        /*List<Aldeano> aldeanoRojo = new List<Aldeano>();
         List<Militar> militaresRojos = new List<Militar>();
 
         aldeanoRojo.Add(new Aldeano("AldeanoRojo"));
@@ -87,48 +87,206 @@ public class Main : MonoBehaviour
         List<Militar> militaresAzules = new List<Militar>();
 
         aldeanoAzul.Add(new Aldeano("AldeanoAzul"));
-        militaresAzules.Add(new Militar("MilitarAzul1",10));
+        militaresAzules.Add(new Militar("MilitarAzul1", 10));
         militaresAzules.Add(new Militar("MilitarAzul2", 20));
         militaresAzules.Add(new Militar("MilitarAzul3", 30));
+        */
+
+        //for(int i=0; i<3; i++){
+        //    militaresAzules.Add(new Militar(Persona.ListaNomes[Random.Range(0,Persona.ListaNomes.Count)], (i+1) * 10;
+        //}
 
         
         
 
         
+        /*for(int i =0; i<10; i++){
+            
+            aldeanoRojo[0].serAtacado(militaresAzules[Random.Range(0, 3)].atacar());
+            aldeanoAzul[0].serAtacado(militaresRojos[Random.Range(0, 3)].atacar());
+        
+            if (!aldeanoRojo[0].getViva()){
+                aldeanoRojo[0] = null;
+                Debug.Log("Destruimos aldeano Rojo");
+                break;
+            }
 
-        aldeanoRojo[0].serAtacado(militaresAzules[Random.Range(0, 3)].atacar());
-        aldeanoAzul[0].serAtacado(militaresRojos[Random.Range(0, 3)].atacar());
-        
-        
+            if (!aldeanoAzul[0].getViva()){
+                aldeanoAzul[0] = null;
+                Debug.Log("Destruimos aldeano Azul");
+                break; 
+            }
+        }
 
-
-
-        
-        
-        
-
-        
-
-        
-
-        
-       
-
-
-
-        
-        
-        
-        
-        
-        
-        
+        */
 
 
+       /* int aleatorio= Random.Range(0,2);
+         if(aleatorio ==0){
+            aldeanoRojo[0].serAtacado(militaresAzules[Random.Range(0, 3)].atacar());
+        }
+
+         while (aldeanoRojo[0].getViva() && aldeanoAzul[0].getViva()){
+                aldeanoRojo[0].serAtacado(militaresAzules[Random.Range(0, 3)].atacar());
+                if (!aldeanoRojo[0].getViva()){
+                    Debug.Log("Ganó el Azul");
+                    break;
+                }
+                aldeanoAzul[0].serAtacado(militaresRojos[Random.Range(0, 3)].atacar());
+                if (!aldeanoAzul[0].getViva()){
+                    Debug.Log("Ganó el Rojo");
+                    break;
+
+            }
+
+         }*/
+
+
+       /* int opcion= Random.Range(0,2);
+        while (aldeanoRojo[0].getViva() && aldeanoAzul[0].getViva()){
+            
+            if(opcion == 1){
+                aldeanoRojo[0].serAtacado(militaresAzules[Random.Range(0, 3)].atacar());
+                if (!aldeanoRojo[0].getViva()){
+                    Debug.Log("Ganó el Azul");
+                    break;
+                }
+                aldeanoAzul[0].serAtacado(militaresRojos[Random.Range(0, 3)].atacar());
+                if (!aldeanoAzul[0].getViva()){
+                    Debug.Log("Ganó el Rojo");
+                    break;
+                }
+            } else {
+                aldeanoAzul[0].serAtacado(militaresRojos[Random.Range(0, 3)].atacar());
+                if (!aldeanoAzul[0].getViva()){
+                    Debug.Log("Ganó el Rojo");
+                    break;
+            }
+               aldeanoRojo[0].serAtacado(militaresAzules[Random.Range(0, 3)].atacar());
+                if (!aldeanoRojo[0].getViva()){
+                    Debug.Log("Ganó el Azul");
+                    break;
+                }
+                
+            }
+                
+        
+        }  */       
+
+
+
+
+        /*int aleatorio= Random.Range(0,2);
+        if(aleatorio ==0){
+            MilitarAtacaAldeano((militaresAzules[Random.Range(0, 3)]),aldeanoRojo[0]);
+            }
+
+        while (aldeanoRojo[0].getViva() && aldeanoAzul[0].getViva()){
+               
+                if (! MilitarAtacaAldeano((militaresAzules[Random.Range(0, 3)]),aldeanoRojo[0])){
+                    Debug.Log("Ganó el Azul");
+                    break;
+                }
+                
+                if (! MilitarAtacaAldeano((militaresRojos[Random.Range(0, 3)]),aldeanoAzul[0])){
+                    Debug.Log("Ganó el Rojo");
+                    break;
+
+            }
+
+         }*/
+
 
         
+        /*
+        int atacante = Random.Range(0,2);
+        int defensor;
+        List<List<Aldeano>> aldeanos = new List<List<Aldeano>>();
+        aldeanos.Add(aldeanoAzul);
+        aldeanos.Add(aldeanoRojo);
+
+        List<List<Militar>> militares = new List<List<Militar>>();
+        militares.Add(militaresAzules);
+        militares.Add(militaresRojos);
+
+        if(atacante == 0){
+            defensor = 1;
+
+        } else {
+            defensor = 0;
+        }
+
+          while (aldeanoRojo[0].getViva() && aldeanoAzul[0].getViva()){
+               
+                if (! MilitarAtacaAldeano((militares[atacante][Random.Range(0, 3)]),aldeanos[defensor][0])){
+                    Debug.Log("Ganó alguien");
+                    break;
+                }
+
+                atacante = defensor;
+                    if(atacante == 0){
+                        defensor = 1;
+
+                    } else {
+                        defensor = 0;
+                    }
+
+                    }
+        */
+                
+               
+        /* Exercicio final: Crea duas listas, un do equipo vermello, e un do equipo azul. OK
+            As duas listas conterán todas as unidades de cada equipo. OK
+            Crea as clases guerreiro e arqueiro. OK
+            Crea dous aldeanos para cada equipo. Crea un edificio para cada equipo. OK
+            Crea un guerreiro e un arqueiro por equipo. O guerreiro ataca 10 e o arqueiro 5. OK
+            Fai que un dos dous aleatoriamente, ataque a unha das catro unidades aleatoriamente (asumimos que están en rango de ataque) OK
+            Se unha unidade xa morreu, debe notificarse, pero se atacan, pasase o turno.
+            En cada unidade de tempo, atacará un dos dous equipos aleatoriamente
+            Imprime por pantalla, o que pasa e quen gaña.
+
+        */
+
+        List <Unidades> unidadRoja = new List<Unidades>();
+        unidadRoja.Add(new Aldeano("AldeanoRojo1"));
+        unidadRoja.Add(new Aldeano("AldeanoRojo2"));
+        unidadRoja.Add(new Edificios());
+        unidadRoja.Add(new Guerrero("GuerreroRojo"));
+        unidadRoja.Add(new Arquero("ArqueroRojo"));
+
+        List<Unidades> unidadAzul = new List<Unidades>();
+        unidadAzul.Add(new Aldeano("AldeanoAzul1"));
+        unidadAzul.Add(new Aldeano("AldeanoAzul2"));
+        unidadAzul.Add(new Edificios());
+        unidadAzul.Add(new Guerrero("GuerreroAzul"));
+        unidadAzul.Add(new Arquero("ArqueroAzul"));
+        
+
+        
+        unidadRoja[Random.Range(0, 5)].serAtacado(((Militar)unidadAzul[Random.Range(3, 5)]).atacar());
+
+        unidadAzul[Random.Range(0, 5)].serAtacado(((Militar)unidadRoja[Random.Range(3, 5)]).atacar());
         
     }
 
+    /*
+        private bool MilitarAtacaAldeano(Militar m, Aldeano a){
+                a.serAtacado(m.atacar());
+                //return a.getViva();
+                if (! a.getViva()){
+                    return false;
+            } else {
+                    return true;
+            }
+            
     
+        }
+
+        */
 }
+
+
+
+
+    
+
