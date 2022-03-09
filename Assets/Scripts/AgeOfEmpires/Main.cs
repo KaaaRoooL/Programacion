@@ -263,9 +263,30 @@ public class Main : MonoBehaviour
         
 
         
-        unidadRoja[Random.Range(0, 5)].serAtacado(((Militar)unidadAzul[Random.Range(3, 5)]).atacar());
+        
+            
+        int aleatorio= Random.Range(0,2);
+        if(aleatorio == 0){
+            unidadRoja[Random.Range(0, 5)].serAtacado(( (Militar) unidadAzul[Random.Range(3, 5)]).atacar());
+        }
+        
+        while (unidadAzul[0].getViva() && unidadAzul[1].getViva() && unidadAzul[2].getViva() && unidadAzul[3].getViva() && unidadAzul[4].getViva() && unidadRoja[0].getViva() && unidadRoja[1].getViva() && unidadRoja[2].getViva() && unidadRoja[3].getViva() && unidadRoja[4].getViva()){
+    
+                unidadAzul[Random.Range(0, 5)].serAtacado(( (Militar) unidadRoja[Random.Range(3, 5)]).atacar());
 
-        unidadAzul[Random.Range(0, 5)].serAtacado(((Militar)unidadRoja[Random.Range(3, 5)]).atacar());
+                if (! unidadAzul[0].getViva() || ! unidadAzul[1].getViva() || ! unidadAzul[2].getViva() || ! unidadAzul[3].getViva() || ! unidadAzul[4].getViva()){
+                    Debug.Log("Ganó la unidad Roja");
+                    break;
+                }
+
+               unidadRoja[Random.Range(0, 5)].serAtacado(( (Militar) unidadAzul[Random.Range(3, 5)]).atacar());
+               
+                if (! unidadRoja[0].getViva() || ! unidadRoja[1].getViva() || ! unidadRoja[2].getViva() || ! unidadRoja[3].getViva() || ! unidadRoja[4].getViva()){
+                    Debug.Log("Ganó la unidad Azul");
+                    break;
+
+            }
+        }
         
     }
 
@@ -283,6 +304,14 @@ public class Main : MonoBehaviour
         }
 
         */
+
+        /*private bool UnidadesVivas(){
+            for()
+
+
+
+        }*/
+    
 }
 
 

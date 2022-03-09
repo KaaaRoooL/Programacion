@@ -9,15 +9,27 @@ public class Edificios : PC
     
     
   
-  
-}
+  public Edificios() {
+        nacer();
+        vidaTotal=500;
+        vidaActual = vidaTotal;
+        Debug.Log("Creado Edificio");
+    }
 
 
 
-enum tipoEdificio{
+
+
+
+  enum tipoEdificio{
         Casa,
         Granja,
         Cuartel,
         Iglesia,
         Castillo
     }
+
+
+
+
+}
