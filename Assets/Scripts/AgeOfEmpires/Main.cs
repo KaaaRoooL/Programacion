@@ -241,9 +241,9 @@ public class Main : MonoBehaviour
             Crea dous aldeanos para cada equipo. Crea un edificio para cada equipo. OK
             Crea un guerreiro e un arqueiro por equipo. O guerreiro ataca 10 e o arqueiro 5. OK
             Fai que un dos dous aleatoriamente, ataque a unha das catro unidades aleatoriamente (asumimos que están en rango de ataque) OK
-            Se unha unidade xa morreu, debe notificarse, pero se atacan, pasase o turno.
-            En cada unidade de tempo, atacará un dos dous equipos aleatoriamente
-            Imprime por pantalla, o que pasa e quen gaña.
+            Se unha unidade xa morreu, debe notificarse, pero se atacan, pasase o turno. OK
+            En cada unidade de tempo, atacará un dos dous equipos aleatoriamente 
+            Imprime por pantalla, o que pasa e quen gaña. OK
 
         */
 
@@ -265,29 +265,54 @@ public class Main : MonoBehaviour
         
         
             
-        int aleatorio= Random.Range(0,2);
+        /*int aleatorio= Random.Range(0,2);
         if(aleatorio == 0){
             unidadRoja[Random.Range(0, 5)].serAtacado(( (Militar) unidadAzul[Random.Range(3, 5)]).atacar());
-        }
+        }*/
         
-        while (unidadAzul[0].getViva() && unidadAzul[1].getViva() && unidadAzul[2].getViva() && unidadAzul[3].getViva() && unidadAzul[4].getViva() && unidadRoja[0].getViva() && unidadRoja[1].getViva() && unidadRoja[2].getViva() && unidadRoja[3].getViva() && unidadRoja[4].getViva()){
-    
-                unidadAzul[Random.Range(0, 5)].serAtacado(( (Militar) unidadRoja[Random.Range(3, 5)]).atacar());
+        while (unidadAzul[3].getViva() || unidadAzul[4].getViva() || unidadRoja[3].getViva() || unidadRoja[4].getViva()){
+                int opcion = Random.Range(0,2);
 
-                if (! unidadAzul[0].getViva() || ! unidadAzul[1].getViva() || ! unidadAzul[2].getViva() || ! unidadAzul[3].getViva() || ! unidadAzul[4].getViva()){
+                if(opcion == 0){
+                    unidadAzul[Random.Range(0, 5)].serAtacado(( (Militar) unidadRoja[Random.Range(3, 5)]).atacar());
+                } else {
+                    unidadRoja[Random.Range(0, 5)].serAtacado(( (Militar) unidadAzul[Random.Range(3, 5)]).atacar());
+                }
+                
+
+                if (todosMuertos(unidadAzul)){
                     Debug.Log("Ganó la unidad Roja");
                     break;
                 }
-
-               unidadRoja[Random.Range(0, 5)].serAtacado(( (Militar) unidadAzul[Random.Range(3, 5)]).atacar());
                
-                if (! unidadRoja[0].getViva() || ! unidadRoja[1].getViva() || ! unidadRoja[2].getViva() || ! unidadRoja[3].getViva() || ! unidadRoja[4].getViva()){
+                if (todosMuertos(unidadRoja)){
                     Debug.Log("Ganó la unidad Azul");
                     break;
 
             }
         }
         
+    }
+
+    private bool todosMuertos(List <Unidades> equipo){
+        for(int i=0 ; i < equipo.Count; i++){
+            if(equipo[i].getViva()){
+                return false;
+            }
+                               
+                }
+                return true;
+            }
+            
+        
+
+
+
+        
+
+
+        
+
     }
 
     /*
@@ -305,14 +330,8 @@ public class Main : MonoBehaviour
 
         */
 
-        /*private bool UnidadesVivas(){
-            for()
+        
 
-
-
-        }*/
-    
-}
 
 
 
