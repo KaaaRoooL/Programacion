@@ -240,9 +240,9 @@ public class Main : MonoBehaviour
             Crea as clases guerreiro e arqueiro. OK
             Crea dous aldeanos para cada equipo. Crea un edificio para cada equipo. OK
             Crea un guerreiro e un arqueiro por equipo. O guerreiro ataca 10 e o arqueiro 5. OK
-            Fai que un dos dous aleatoriamente, ataque a unha das catro unidades aleatoriamente (asumimos que están en rango de ataque) OK
+            Fai que un dos dous aleatoriamente, ataque a unha das catro unidades aleatoriamente (asumimos que están en rango de ataque). OK
             Se unha unidade xa morreu, debe notificarse, pero se atacan, pasase o turno. OK
-            En cada unidade de tempo, atacará un dos dous equipos aleatoriamente 
+            En cada unidade de tempo, atacará un dos dous equipos aleatoriamente. OK
             Imprime por pantalla, o que pasa e quen gaña. OK
 
         */
@@ -270,7 +270,8 @@ public class Main : MonoBehaviour
             unidadRoja[Random.Range(0, 5)].serAtacado(( (Militar) unidadAzul[Random.Range(3, 5)]).atacar());
         }*/
         
-        while (unidadAzul[3].getViva() || unidadAzul[4].getViva() || unidadRoja[3].getViva() || unidadRoja[4].getViva()){
+        while ((unidadAzul[3].getViva() || unidadAzul[4].getViva()) && (unidadRoja[3].getViva() || unidadRoja[4].getViva())){
+                
                 int opcion = Random.Range(0,2);
 
                 if(opcion == 0){
@@ -280,12 +281,12 @@ public class Main : MonoBehaviour
                 }
                 
 
-                if (todosMuertos(unidadAzul)){
+                if ((!unidadAzul[3].getViva() && !unidadAzul[4].getViva()) || todosMuertos(unidadAzul)){
                     Debug.Log("Ganó la unidad Roja");
                     break;
                 }
                
-                if (todosMuertos(unidadRoja)){
+                if ( (!unidadRoja[3].getViva() && !unidadRoja[4].getViva()) || todosMuertos(unidadRoja)){
                     Debug.Log("Ganó la unidad Azul");
                     break;
 
@@ -298,11 +299,10 @@ public class Main : MonoBehaviour
         for(int i=0 ; i < equipo.Count; i++){
             if(equipo[i].getViva()){
                 return false;
-            }
-                               
-                }
-                return true;
-            }
+            }                  
+        }
+        return true;
+    }
             
         
 
